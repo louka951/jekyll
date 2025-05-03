@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Michael - Boutique en ligne</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Logo Michael" class="logo" />
+    <h1>Michael</h1>
+    <a href="commande.html" class="panier">Panier (<span id="compteur-panier">0</span>)</a>
+  </header>
+
+  <main>
+    <h2>Nos Produits</h2>
+    <div class="produits">
+      <div class="produit">
+        <img src="produit1.jpg" alt="Produit 1" />
+        <h3>Produit 1</h3>
+        <p>20 €</p>
+        <button onclick="ajouterAuPanier('Produit 1', 20)">Ajouter au panier</button>
+      </div>
+      <div class="produit">
+        <img src="produit2.jpg" alt="Produit 2" />
+        <h3>Produit 2</h3>
+        <p>35 €</p>
+        <button onclick="ajouterAuPanier('Produit 2', 35)">Ajouter au panier</button>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function ajouterAuPanier(nom, prix) {
+      let panier = JSON.parse(localStorage.getItem("panier")) || [];
+      panier.push({ nom, prix });
+      localStorage.setItem("panier", JSON.stringify(panier));
+      alert(nom + " a été ajouté au panier !");
+      mettreAJourCompteurPanier();
+    }
+
+    function mettreAJourCompteurPanier() {
+      const panier = JSON.parse(localStorage.getItem("panier")) || [];
+      document.getElementById("compteur-panier").textContent = panier.length;
+    }
+
+    mettreAJourCompteurPanier();
+  </script>
+</body>
+</html>

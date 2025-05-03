@@ -1,0 +1,92 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #333;
+    color: white;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+  }
+  
+  .logo {
+    height: 50px;
+  }
+  
+  .panier, .retour {
+    color: white;
+    text-decoration: none;
+  }
+  
+  main {
+    padding: 20px;
+  }
+  
+  .produits {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .produit {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+  }
+  
+  .produit img {
+    width: 100%;
+    height: auto;
+  }
+  
+  form {
+    max-width: 400px;
+    margin-top: 20px;
+  }
+  
+  form input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px;
+  }
+  
+  button {
+    padding: 10px 15px;
+    background: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    max-width: 200px;
+  }
+  
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .produits {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .produit {
+      width: 90%;
+    }
+  
+    form input {
+      width: 100%;
+    }
+  
+    .panier, .retour {
+      margin-top: 10px;
+    }
+  }
